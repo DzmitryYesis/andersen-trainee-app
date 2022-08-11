@@ -7,7 +7,7 @@ import MyButton from "./components/button/myButton";
 class App extends React.Component {
     render() {
         return <div className='App'>
-            <h1>Questionnaire creation</h1>
+            <h1 className='HText'>Questionnaire creation</h1>
             <MyInput label={'Name'} placeholder={'Type your name'} type={'text'}/>
             <MyInput label={'Surname'} placeholder={'Type your surname'} type={'text'}/>
             <MyInput label={'Birthday'} placeholder={'Select'} type={'date'}/>

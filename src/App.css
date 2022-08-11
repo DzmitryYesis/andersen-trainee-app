@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f1eeee;
+}
+
+.HText {
+    color: #bb1b1b;
 }
 
 .ButtonBlock {
