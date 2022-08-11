@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    text-align: left;
+}
+
+.textarea {
+    width: 250px;
+    resize: none;
+}
