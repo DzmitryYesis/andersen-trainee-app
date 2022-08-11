@@ -1,6 +1,7 @@
 .wrapper {
     display: flex;
     flex-direction: column;
+    margin-bottom: 3px;
 }
 
 .label {
@@ -10,4 +11,5 @@
 .textarea {
     width: 250px;
     resize: none;
+    border-radius: 5px;
 }

@@ -1,0 +1,9 @@
+.wrapper {
+    margin-top: 3px;
+}
+
+.button {
+    width: 85px;
+    height: 25px;
+    border-radius: 5px;
+}
