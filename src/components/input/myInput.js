@@ -9,7 +9,7 @@ class MyInput extends React.Component {
                 <label className={style.label}>
                     {this.props.label}:
                 </label>
-                <input className={style.input} placeholder={this.props.placeholder}/>
+                <input className={style.input} type={this.props.type} placeholder={this.props.placeholder}/>
             </div>
         )
     }
