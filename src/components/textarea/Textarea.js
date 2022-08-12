@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./myTextarea.module.css";
+import style from "./Textarea.module.css";
 
-class MyTextarea extends React.Component {
+class Textarea extends React.Component {
 
     render() {
         return (
@@ -17,4 +17,4 @@ class MyTextarea extends React.Component {
     }
 }
 
-export default MyTextarea
+export default Textarea

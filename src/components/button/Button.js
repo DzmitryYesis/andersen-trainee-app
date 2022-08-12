@@ -1,7 +1,7 @@
 import React from "react";
-import style from './myButton.module.css'
+import style from './Button.module.css'
 
-class MyButton extends React.Component{
+class Button extends React.Component {
 
     render() {
         return (
@@ -14,4 +14,4 @@ class MyButton extends React.Component{
     }
 }
 
-export default MyButton
+export default Button

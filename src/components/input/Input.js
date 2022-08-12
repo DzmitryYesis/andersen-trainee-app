@@ -1,7 +1,7 @@
 import React from "react";
-import style from './myInput.module.css'
+import style from './Input.module.css'
 
-class MyInput extends React.Component {
+class Input extends React.Component {
 
     render() {
         return (
@@ -16,4 +16,4 @@ class MyInput extends React.Component {
     }
 }
 
-export default MyInput
+export default Input
