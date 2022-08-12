@@ -1,15 +1,15 @@
-.App {
+.app {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f1eeee;
 }
 
-.HText {
+.hText {
     color: #bb1b1b;
 }
 
-.ButtonBlock {
+.buttonBlock {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
