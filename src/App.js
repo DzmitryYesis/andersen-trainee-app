@@ -32,6 +32,28 @@ class App extends React.Component {
             }
         }
 
+        if (fields['name'][0]!==fields['name'][0].toUpperCase()){
+            formIsValid = false
+            errors['name'] = 'Name must start with a capital letter'
+        }
+
+        //Surname
+        if (!fields["surname"]) {
+            formIsValid = false;
+            errors['surname'] = "Cannot be empty";
+        }
+
+        if (typeof fields["surname"] !== "undefined") {
+            if (!fields["surname"].match(/^[a-zA-Z]+$/)) {
+                formIsValid = false;
+                errors['surname'] = "Only letters";
+            }
+        }
+
+        if (fields['surname'][0]!==fields['surname'][0].toUpperCase()){
+            formIsValid = false
+            errors['surname'] = 'Surname must start with a capital letter'
+        }
         //Email
         // if (!fields["email"]) {
         //     formIsValid = false;
@@ -74,8 +96,12 @@ class App extends React.Component {
 
     handleChange(field, e) {
         let fields = this.state.fields;
-        fields[field] = e.target.value;
+        fields[field] = e.target.value.trim();
         this.setState({fields});
+    }
+
+    handleClearState() {
+        this.setState({})
     }
 
     render() {
@@ -100,8 +126,8 @@ class App extends React.Component {
                     <Textarea label={'Previous project'}
                               placeholder={'Tell us about your previous project'}/>
                     <div className={style.buttonBlock}>
-                        <Button name={'Save'} />
-                        <Button name={'Cancel'}/>
+                        <Button name={'Save'}/>
+                        <Button name={'Cancel'} onClick={this.handleClearState}/>
                     </div>
                 </fieldset>
             </form>
