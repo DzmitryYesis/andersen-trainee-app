@@ -5,7 +5,9 @@ import style from './Notification.module.css'
 const Template = ({closePopUp}) => {
     return (
         <div className={style.notifications}>
-            Notification <button onClick={closePopUp}>Close</button>
+            Your questionnaire is submitted
+            <button className={style.button}
+                    onClick={closePopUp}>OK</button>
         </div>
     )
 }

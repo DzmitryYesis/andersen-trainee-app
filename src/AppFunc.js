@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {QuestionnaireFunc} from "./components/questionnaire/QuestionnaireFunc";
 import style from "./App.module.css";
 import {InputFunc} from "./components/input/InputFunc";
@@ -119,7 +119,7 @@ export const AppFunc = () => {
     }
 
     const handleStateChange = (formName, name) => {
-        setErrors({...errors, [formName]:''})
+        setErrors({...errors, [formName]: ''})
         setState({...state, form: {...state.form, [formName]: name}})
     }
 
@@ -164,7 +164,7 @@ export const AppFunc = () => {
                                   value={state.form.previousProject}
                                   error={errors.previousProject}/>
                     <div className={style.buttonBlock}>
-                        <ButtonFunc name={'Save'} onClick={checkValidForm}/>
+                        <ButtonFunc name={'Submit'} onClick={checkValidForm}/>
                         <ButtonFunc name={'Cancel'} onClick={clearState}/>
                     </div>
                 </div>}

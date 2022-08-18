@@ -20,7 +20,8 @@ export const TextareaFunc = ({label, placeholder, onChange, name, value, error})
                       name={name}
                       value={value}
                       rows={7}/>
-            {error ? <span className={style.span}>{error}</span>:<div className={style.errorDiv}/>}
+            {error ? <span className={style.span}>{error}</span> :
+                <div className={style.errorDiv}/>}
         </div>
     )
 }
