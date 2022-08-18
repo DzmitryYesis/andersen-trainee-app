@@ -1,38 +1,35 @@
+import style from './Questionnaire.module.css'
+
 export const QuestionnaireFunc = ({state}) => {
     return (
-        <div>
-            <h1>Personal Questionnaire</h1>
-            <div>
-                <span>Name:</span>
-                <span>{state.form.name}</span>
-            </div>
-            <div>
-                <span>Surname:</span>
-                <span>{state.form.surname}</span>
-            </div>
-            <div>
-                <span>Birthday:</span>
-                <span>{state.form.birthday}</span>
-            </div>
-            <div>
-                <span>Phone:</span>
-                <span>{state.form.phone}</span>
-            </div>
-            <div>
-                <span>Email:</span>
-                <span>{state.form.email}</span>
-            </div>
-            <div>
-                <span>About yourself:</span>
-                <span>{state.form.aboutYourself}</span>
-            </div>
-            <div>
-                <span>Skills:</span>
-                <span>{state.form.skills}</span>
-            </div>
-            <div>
-                <span>Previous project:</span>
-                <span>{state.form.previousProject}</span>
+        <div className={style.wrapper}>
+            <h1 className={style.h1}>Personal Questionnaire</h1>
+            <h2 className={style.h2}>{state.form.name} {state.form.surname}</h2>
+            <div className={style.formWrapper}>
+                <div className={style.divRow}>
+                    <span className={style.spanName}>Birthday:</span>
+                    <span className={style.spanInfo}>{state.form.birthday}</span>
+                </div>
+                <div className={style.divRow}>
+                    <span className={style.spanName}>Phone:</span>
+                    <span className={style.spanInfo}>{state.form.phone}</span>
+                </div>
+                <div className={style.divRow}>
+                    <span className={style.spanName}>Email:</span>
+                    <span className={style.spanInfo}>{state.form.email}</span>
+                </div>
+                <div className={style.divRow}>
+                    <span className={style.spanName}>About yourself:</span>
+                    <span className={style.spanInfo}>{state.form.aboutYourself}</span>
+                </div>
+                <div className={style.divRow}>
+                    <span className={style.spanName}>Skills:</span>
+                    <span className={style.spanInfo}>{state.form.skills}</span>
+                </div>
+                <div className={style.divRow}>
+                    <span className={style.spanName}>Previous project:</span>
+                    <span className={style.spanInfo}>{state.form.previousProject}</span>
+                </div>
             </div>
         </div>
     )
