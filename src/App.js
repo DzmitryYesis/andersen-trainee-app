@@ -8,10 +8,17 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
+        this.handleChange = this.handleChange.bind(this)
+        this.handleClearState = this.handleClearState.bind(this)
+
         this.state = {
             fields: {},
             errors: {},
         }
+    }
+
+    componentDidMount() {
+        console.log(this.state)
     }
 
     handleValidation() {
@@ -31,11 +38,10 @@ class App extends React.Component {
                 errors['name'] = "Only letters";
             }
         }
-
-        if (fields['name'][0]!==fields['name'][0].toUpperCase()){
-            formIsValid = false
-            errors['name'] = 'Name must start with a capital letter'
-        }
+        // if (fields['name'][0]!==fields['name'][0].toUpperCase()){
+        //     formIsValid = false
+        //     errors['name'] = 'Name must start with a capital letter'
+        // }
 
         //Surname
         if (!fields["surname"]) {
@@ -50,14 +56,21 @@ class App extends React.Component {
             }
         }
 
-        if (fields['surname'][0]!==fields['surname'][0].toUpperCase()){
-            formIsValid = false
-            errors['surname'] = 'Surname must start with a capital letter'
-        }
+        // if (fields['surname'][0]!==fields['surname'][0].toUpperCase()){
+        //     formIsValid = false
+        //     errors['surname'] = 'Surname must start with a capital letter'
+        // }
         //Email
         // if (!fields["email"]) {
         //     formIsValid = false;
         //     errors["email"] = "Cannot be empty";
+        // }
+        //
+        // if (typeof fields["email"] !== "undefined") {
+        //     if (!fields["email"].match('^(https?:\\/\\/)?')) {
+        //         formIsValid = false;
+        //         errors['email'] = "Only letters";
+        //     }
         // }
         //
         // if (typeof fields["email"] !== "undefined") {
@@ -78,7 +91,12 @@ class App extends React.Component {
         //     }
         // }
 
-        this.setState({errors});
+        this.setState((prevState) => {
+            return {
+                ...prevState,
+                    errors
+            }
+        });
         return formIsValid;
     }
 
@@ -87,21 +105,33 @@ class App extends React.Component {
 
         if (this.handleValidation()) {
             alert("Form submitted")
-            console.log(this.state);
         } else {
             alert("Form has errors.");
-            console.log(this.state)
         }
     }
 
-    handleChange(field, e) {
-        let fields = this.state.fields;
-        fields[field] = e.target.value.trim();
-        this.setState({fields});
+    handleChange(e) {
+        const { name, value } = e.target
+        this.setState((prevState) => {
+            return {
+                ...prevState,
+                fields: {
+                    ...prevState.fields,
+                    [name]: value
+
+                }
+            }
+        })
     }
 
     handleClearState() {
-        this.setState({})
+        this.setState((prevState) => {
+            return {
+                ...prevState,
+                fields: {},
+                errors: {}
+            }
+        })
     }
 
     render() {
@@ -111,15 +141,19 @@ class App extends React.Component {
                   onSubmit={this.contactSubmit.bind(this)}>
                 <fieldset>
                     <Input label={'Name'} placeholder={'Type your name'} type={'text'}
-                           ref={'name'} onChange={this.handleChange.bind(this, "name")}
+                           name={'name'} onChange={this.handleChange}
                            value={this.state.fields?.name}
                            error={this.state.error?.name}/>
                     <Input label={'Surname'} placeholder={'Type your surname'}
-                           type={'text'}/>
+                           type={'text'} name={'surname'} onChange={this.handleChange}
+                           value={this.state.fields?.surname}
+                           error={this.state.error?.surname}/>
                     <Input label={'Birthday'} placeholder={'Select'} type={'date'}/>
                     <Input label={'Phone'} placeholder={'Type your phone number'}
                            type={'text'}/>
-                    <Input label={'Email'} placeholder={'Type your email'} type={'text'}/>
+                    <Input label={'Email'} placeholder={'Type your email'} type={'text'} ref={'name'} onChange={this.handleChange}
+                           value={this.state.fields?.email}
+                           error={this.state.error?.email}/>
                     <Textarea label={'About yourself'}
                               placeholder={'Tell us about yourself'}/>
                     <Textarea label={'Skills'} placeholder={'Tell us about your skills'}/>
