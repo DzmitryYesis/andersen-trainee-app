@@ -8,7 +8,7 @@ class InputClass extends React.Component {
     }
 
     render() {
-        const {label, type, name, value, error} = this.props
+        const {error} = this.props
         return (
             <div className={style.wrapper}>
                 <label className={style.label}>

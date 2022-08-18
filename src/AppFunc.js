@@ -8,7 +8,7 @@ import {ButtonFunc} from "./components/button/ButtonFunc";
 const initialState = {
     form: {
         name: undefined,
-        surname: '',
+        surname: undefined,
         birthday: '',
         phone: '',
         email: '',
@@ -21,7 +21,7 @@ const initialState = {
 
 const initialErrorsState = {
     name: null,
-    surname: '',
+    surname: null,
     birthday: '',
     phone: '',
     email: '',
@@ -41,22 +41,42 @@ export const AppFunc = () => {
         //Name
         if (!state.form.name) {
             isValid = false
-            setErrors({...errors, name: 'Cannot be empty'})
+            setErrors({...errors, name: 'Cannot be empty!'})
         }
 
         if (typeof state.form.name !== "undefined") {
             if (!state.form.name.match(/^[a-zA-Z]+$/)) {
                 isValid = false;
-                setErrors({...errors, name: 'Only letters'})
+                setErrors({...errors, name: 'Only letters!'})
             }
         }
 
         if (typeof state.form.name !== "undefined") {
             if (state.form.name[0] !== state.form.name[0].toUpperCase()) {
                 isValid = false
-                setErrors({...errors, name: 'Name must start with a capital letter'})
+                setErrors({...errors, name: 'Name must start with a capital letter!'})
             }
         }
+
+        //Surname
+        // if (!state.form.surname) {
+        //     isValid = false
+        //     setErrors({...errors, surname: 'Cannot be empty'})
+        // }
+        //
+        // if (typeof state.form.surname !== "undefined") {
+        //     if (!state.form.surname.match(/^[a-zA-Z]+$/)) {
+        //         isValid = false;
+        //         setErrors({...errors, surname: 'Only letters'})
+        //     }
+        // }
+        //
+        // if (typeof state.form.surname !== "undefined") {
+        //     if (state.form.surname[0] !== state.form.surname[0].toUpperCase()) {
+        //         isValid = false
+        //         setErrors({...errors, surname: 'Name must start with a capital letter'})
+        //     }
+        // }
 
         if(isValid){
             setState({...state, isValidForm: true})

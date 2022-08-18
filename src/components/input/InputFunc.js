@@ -16,7 +16,7 @@ export const InputFunc = ({label, placeholder, type, onChange, name, value, erro
             <input className={style.input} type={type}
                    placeholder={placeholder} name={name} value={value}
                    onChange={onChangeState}/>
-            {error ? <span>{error}</span>:<div className={style.errorDiv}/>}
+            {error ? <span className={style.span}>{error}</span>:<div className={style.errorDiv}/>}
         </div>
     )
 }
