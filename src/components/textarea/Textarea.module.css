@@ -14,3 +14,11 @@
     resize: none;
     border-radius: 5px;
 }
+
+.span {
+    color: #bb1b1b;
+}
+
+.errorDiv {
+    height: 18px;
+}

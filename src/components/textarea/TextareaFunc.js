@@ -2,7 +2,7 @@ import style from "./Textarea.module.css";
 import React from "react";
 
 
-export const TextareaFunc = ({label, placeholder, onChange, name, value}) => {
+export const TextareaFunc = ({label, placeholder, onChange, name, value, error}) => {
 
     const onChangeState = (event) => {
         const {name, value} = event.target
@@ -20,6 +20,7 @@ export const TextareaFunc = ({label, placeholder, onChange, name, value}) => {
                       name={name}
                       value={value}
                       rows={7}/>
+            {error ? <span className={style.span}>{error}</span>:<div className={style.errorDiv}/>}
         </div>
     )
 }
