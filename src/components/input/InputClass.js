@@ -6,8 +6,9 @@ class InputClass extends React.Component {
         super(props);
         console.log(this.props.error)
     }
+
     render() {
-        const { label, type, name, value, error } = this.props
+        const {label, type, name, value, error} = this.props
         return (
             <div className={style.wrapper}>
                 <label className={style.label}>

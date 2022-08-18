@@ -1,4 +1,4 @@
-import style from "src/components/textarea/Textarea.module.css";
+import style from "./Textarea.module.css";
 import React from "react";
 
 

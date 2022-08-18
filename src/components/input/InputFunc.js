@@ -1,4 +1,4 @@
-import style from "src/components/input/Input.module.css";
+import style from "./Input.module.css";
 import React from "react";
 
 export const InputFunc = ({label, placeholder, type, name, onChange, value}) => {

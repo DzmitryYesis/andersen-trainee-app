@@ -4,7 +4,7 @@ import InputClass from "./components/input/InputClass";
 import TextareaClass from "./components/textarea/TextareaClass";
 import ButtonClass from "./components/button/ButtonClass";
 
-class App extends React.Component {
+class AppClass extends React.Component {
     constructor(props) {
         super(props);
 
@@ -169,4 +169,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default AppClass;
