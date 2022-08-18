@@ -1,12 +1,12 @@
 import React from "react";
 import style from './Button.module.css'
 
-class Button extends React.Component {
+class ButtonClass extends React.Component {
 
     render() {
         return (
             <div className={style.wrapper}>
-                <button className={style.button}>
+                <button className={style.button} onClick={this.props.onClick}>
                     {this.props.name}
                 </button>
             </div>
@@ -14,4 +14,4 @@ class Button extends React.Component {
     }
 }
 
-export default Button
+export default ButtonClass
