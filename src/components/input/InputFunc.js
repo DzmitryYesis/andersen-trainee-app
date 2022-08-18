@@ -1,7 +1,7 @@
 import style from "./Input.module.css";
 import React from "react";
 
-export const InputFunc = ({label, placeholder, type, onChange, name, value}) => {
+export const InputFunc = ({label, placeholder, type, onChange, name, value, error}) => {
 
     const onChangeState = (event) => {
         const {name, value} = event.target
@@ -16,6 +16,7 @@ export const InputFunc = ({label, placeholder, type, onChange, name, value}) => 
             <input className={style.input} type={type}
                    placeholder={placeholder} name={name} value={value}
                    onChange={onChangeState}/>
+            {error ? <span>{error}</span>:<div className={style.errorDiv}/>}
         </div>
     )
 }
