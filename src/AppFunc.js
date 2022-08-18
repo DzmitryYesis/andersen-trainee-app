@@ -4,6 +4,7 @@ import style from "./App.module.css";
 import {InputFunc} from "./components/input/InputFunc";
 import {TextareaFunc} from "./components/textarea/TextareaFunc";
 import {ButtonFunc} from "./components/button/ButtonFunc";
+import {Notification} from "./components/notification/Notification";
 
 const initialState = {
     form: {
@@ -34,6 +35,7 @@ export const AppFunc = () => {
 
     const [state, setState] = useState(initialState)
     const [errors, setErrors] = useState(initialErrorsState)
+    const [isShowPopUp, setIsShowPopUp] = useState(false)
 
     const checkValidForm = () => {
         let isValid = true;
@@ -80,6 +82,7 @@ export const AppFunc = () => {
 
         if(isValid){
             setState({...state, isValidForm: true})
+            setIsShowPopUp(true)
         }
     }
 
@@ -171,6 +174,7 @@ export const AppFunc = () => {
                             <ButtonFunc name={'Cancel'} onClick={clearState}/>
                         </div>
                     </div>}
+                <Notification isShowPopUp={isShowPopUp} setIsShowPopUp={setIsShowPopUp}/>
             </div>
         )
     }
