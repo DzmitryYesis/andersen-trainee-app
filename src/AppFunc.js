@@ -5,31 +5,11 @@ import {InputFunc} from "./components/input/InputFunc";
 import {TextareaFunc} from "./components/textarea/TextareaFunc";
 import {ButtonFunc} from "./components/button/ButtonFunc";
 import {Notification} from "./components/notification/Notification";
+import {initialState} from "./components/state/initialState";
+import {initialErrorsState} from "./components/state/errorsState";
 
-const initialState = {
-    form: {
-        name: '',
-        surname: '',
-        birthday: '',
-        phone: '',
-        email: '',
-        aboutYourself: '',
-        skills: '',
-        previousProject: ''
-    },
-    isValidForm: false
-}
 
-const initialErrorsState = {
-    name: '',
-    surname: '',
-    birthday: '',
-    phone: '',
-    email: '',
-    aboutYourself: '',
-    skills: '',
-    previousProject: ''
-}
+
 
 export const AppFunc = () => {
 
