@@ -21,7 +21,7 @@ export const TextareaFunc = ({label, placeholder, onChange, name, value, error})
                       value={value}
                       rows={7}/>
             {error ? <span className={style.span}>{error}</span> :
-                <div className={style.errorDiv}/>}
+                <div className={style.errorDiv}>{600-value.length}/600 characters left</div>}
         </div>
     )
 }
