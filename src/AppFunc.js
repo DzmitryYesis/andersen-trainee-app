@@ -9,8 +9,6 @@ import {initialState} from "./components/state/initialState";
 import {initialErrorsState} from "./components/state/errorsState";
 
 
-
-
 export const AppFunc = () => {
 
     const [state, setState] = useState(initialState)
